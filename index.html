@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Happy New Year 2026 – Xuân Bính Ngọ 🐴🔥</title>
+  <meta name="description"
+    content="Chúc Mừng Năm Mới 2026 - Tết Bính Ngọ. Gửi lì xì ảo, xem bảng xếp hạng Lộc Xuân, và đón giao thừa cùng ngựa lửa!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/envelope.css">
+  <link rel="stylesheet" href="css/mascot.css">
+  <link rel="stylesheet" href="css/fireworks.css">
+  <link rel="stylesheet" href="css/darkmode.css">
+</head>
+
+<body class="dark-mode">
+
+  <!-- Ember Particles Background -->
+  <div class="ember-container" id="ember-container"></div>
+
+
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="year-badge">2026</div>
+      <h1>Chúc Mừng Năm Mới</h1>
+      <p class="tagline">Xuân Bính Ngọ – Ngựa Lửa mang lộc, phúc đầy nhà, tài lộc rực rỡ</p>
+      <a href="#lixi-section" class="btn-send"
+        style="width:auto;display:inline-block;margin-top:32px;padding:16px 48px;font-size:1rem;">
+        <svg style="width:20px;height:20px;vertical-align:middle;margin-right:8px;" viewBox="0 0 24 24"
+          fill="currentColor">
+          <path
+            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z" />
+        </svg>
+        Gửi Lì Xì Ngay
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== COUNTDOWN ========== -->
+  <section class="countdown-section" id="countdown-section">
+    <div class="container">
+      <h2 class="section-title">
+        Đếm Ngược Đến Tết Nguyên Đán
+        <span class="subtitle">Mùng 1 Tết Bính Ngọ – 17/02/2026</span>
+      </h2>
+      <div class="countdown-wrapper">
+        <div class="countdown-item">
+          <div class="countdown-value" id="cd-days">00</div>
+          <div class="countdown-label">Ngày</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="cd-hours">00</div>
+          <div class="countdown-label">Giờ</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="cd-minutes">00</div>
+          <div class="countdown-label">Phút</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="cd-seconds">00</div>
+          <div class="countdown-label">Giây</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEND LIXI ========== -->
+  <section class="lixi-section" id="lixi-section">
+    <div class="container">
+      <h2 class="section-title">
+        Gửi Lì Xì
+        <span class="subtitle">Chọn mẫu bao & số tiền yêu thích</span>
+      </h2>
+
+      <div class="lixi-form-card">
+        <form id="lixi-form" autocomplete="off">
+          <div class="form-group">
+            <label for="sender-name">Tên người gửi</label>
+            <input type="text" id="sender-name" placeholder="Nhập tên của bạn..." required>
+          </div>
+
+          <div class="form-group">
+            <label>Số tiền lì xì</label>
+            <input type="number" id="lixi-amount" placeholder="Nhập số tiền..." min="10000" required>
+            <div class="amount-presets">
+              <button type="button" class="amount-preset" data-amount="50000">50.000đ</button>
+              <button type="button" class="amount-preset" data-amount="100000">100.000đ</button>
+              <button type="button" class="amount-preset" data-amount="200000">200.000đ</button>
+              <button type="button" class="amount-preset" data-amount="500000">500.000đ</button>
+              <button type="button" class="amount-preset active" data-amount="1000000">1.000.000đ</button>
+              <button type="button" class="amount-preset" data-amount="2000000">2.000.000đ</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lixi-message">Lời chúc</label>
+            <textarea id="lixi-message" rows="3" placeholder="Nhập lời chúc năm mới..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Chọn mẫu bao lì xì</label>
+            <div class="envelope-picker">
+              <div class="envelope-option selected" data-design="1">
+                <div class="mini-envelope">
+                  <div class="mini-env-body design-1">
+                    <div class="mini-env-circle"></div>
+                  </div>
+                </div>
+                <div class="env-name">Ngựa Lửa Vàng Kim</div>
+              </div>
+              <div class="envelope-option" data-design="2">
+                <div class="mini-envelope">
+                  <div class="mini-env-body design-2">
+                    <div class="mini-env-circle"></div>
+                  </div>
+                </div>
+                <div class="env-name">Hoa Mai Đỏ</div>
+              </div>
+              <div class="envelope-option" data-design="3">
+                <div class="mini-envelope">
+                  <div class="mini-env-body design-3">
+                    <div class="mini-env-circle"></div>
+                  </div>
+                </div>
+                <div class="env-name">Phúc – Lộc – Thọ</div>
+              </div>
+              <div class="envelope-option" data-design="4">
+                <div class="mini-envelope">
+                  <div class="mini-env-body design-4">
+                    <div class="mini-env-circle"></div>
+                  </div>
+                </div>
+                <div class="env-name">Minimal Hiện Đại</div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-send" id="btn-send">
+            <svg style="width:20px;height:20px;vertical-align:middle;margin-right:8px;" viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+            Gửi Lì Xì
+          </button>
+        </form>
+
+        <!-- Total Display (Hidden as per request) -->
+        <div class="total-display" style="display:none;">
+          <div class="total-label">Tổng lì xì cộng đồng</div>
+          <div class="total-amount" id="total-amount">0đ</div>
+          <div class="total-progress">
+            <div class="total-progress-bar" id="total-progress-bar" style="width:0%"></div>
+          </div>
+          <div class="milestone-text">Mục tiêu: 5.000.000đ – Kích hoạt pháo hoa! 🎆</div>
+        </div>
+
+        <div
+          style="text-align:center;font-size:0.8rem;color:var(--text-muted);margin-top:12px;opacity:0.8;font-style:italic;">
+          * Lưu ý: Đây là tiền lì xì ảo để chúc mừng năm mới, không có giá trị thực tế.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RECENT LIST ========== -->
+  <section class="leaderboard-section" id="leaderboard-section">
+    <div class="leaderboard-fire-border"></div>
+    <div class="container">
+      <h2 class="section-title">
+        Danh Sách Lì Xì Mới Nhất
+        <span class="subtitle">Những lời chúc ý nghĩa vừa được gửi</span>
+      </h2>
+      <div class="leaderboard-card">
+        <div class="leaderboard-header">
+          <h3 style="font-size:1rem;margin:0;">
+            <svg style="width:20px;height:20px;vertical-align:middle;margin-right:8px;fill:var(--gold-primary);"
+              viewBox="0 0 24 24">
+              <path
+                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+            </svg>
+            Mới Nhất
+          </h3>
+          <button onclick="App.resetData();RecentList.render();updateTotal();"
+            style="background:none;border:1px solid rgba(255,215,0,0.2);border-radius:8px;color:var(--text-muted);padding:6px 14px;cursor:pointer;font-family:inherit;font-size:0.75rem;">Reset</button>
+        </div>
+        <div class="leaderboard-list" id="leaderboard-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>🐴 Happy New Year 2026 – Xuân Bính Ngọ 🔥</p>
+      <p style="margin-top:8px;opacity:0.6;">Made with ❤️ for Tết Nguyên Đán</p>
+    </div>
+  </footer>
+
+  <!-- ========== 3D ENVELOPE DISPLAY ========== -->
+  <div class="envelope-3d-display" id="envelope-display">
+    <div class="envelope-3d-overlay"></div>
+    <div class="envelope-3d envelope-design-1">
+      <div class="envelope-body">
+        <div class="envelope-front">
+          <div class="env-border-pattern"></div>
+          <div class="env-pattern-dots"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="envelope-decoration">
+            <div class="env-gold-circle">
+              <svg viewBox="0 0 100 100"><text x="50" y="58" text-anchor="middle" font-size="40" font-weight="900"
+                  fill="#8B0000">福</text></svg>
+            </div>
+          </div>
+        </div>
+        <div class="envelope-flap">
+          <div class="envelope-flap-face"></div>
+          <div class="envelope-flap-seal">福</div>
+        </div>
+        <div class="envelope-money">
+          <div class="money-glow"></div>
+          <div class="money-amount">0đ</div>
+          <div class="envelope-message"></div>
+        </div>
+        <div class="envelope-sparkles"></div>
+        <button class="envelope-close">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FIREWORKS ========== -->
+  <canvas class="fireworks-canvas" id="fireworks-canvas"></canvas>
+  <div class="fireworks-celebration">
+    <div class="celebration-text">
+      <h2>🎆 5 Triệu Lì Xì! 🎆</h2>
+      <p>Cảm ơn mọi người đã chung vui đón Tết!</p>
+    </div>
+    <button class="fireworks-close" onclick="Fireworks.stop()">✕ Đóng pháo hoa</button>
+  </div>
+
+  <!-- ========== MASCOT ========== -->
+  <div class="mascot-container">
+    <div class="mascot-wrapper">
+      <div class="mascot-speech" id="mascot-speech">Chúc bạn năm mới bứt phá!</div>
+      <svg class="mascot-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+        <!-- Body -->
+        <ellipse cx="100" cy="160" rx="50" ry="55" fill="url(#bodyGrad)" stroke="#DAA520" stroke-width="2" />
+        <!-- Head -->
+        <ellipse cx="100" cy="90" rx="40" ry="38" fill="url(#headGrad)" stroke="#DAA520" stroke-width="2" />
+        <!-- Ears -->
+        <ellipse cx="68" cy="62" rx="8" ry="16" fill="#FF6F00" transform="rotate(-15 68 62)" />
+        <ellipse cx="132" cy="62" rx="8" ry="16" fill="#FF6F00" transform="rotate(15 132 62)" />
+        <!-- Mane (Fire) -->
+        <g class="mascot-mane">
+          <ellipse cx="100" cy="50" rx="30" ry="18" fill="url(#fireGrad)" opacity="0.9" />
+          <ellipse cx="85" cy="45" rx="15" ry="12" fill="#FFD700" opacity="0.7" />
+          <ellipse cx="115" cy="48" rx="12" ry="10" fill="#FF8F00" opacity="0.8" />
+          <ellipse cx="100" cy="38" rx="18" ry="14" fill="#FFAB00" opacity="0.6" />
+        </g>
+        <!-- Eyes -->
+        <ellipse class="mascot-eye-left" cx="85" cy="85" rx="6" ry="7" fill="#1A0A0A" />
+        <ellipse class="mascot-eye-right" cx="115" cy="85" rx="6" ry="7" fill="#1A0A0A" />
+        <ellipse cx="83" cy="82" rx="2.5" ry="2.5" fill="#FFF" />
+        <ellipse cx="113" cy="82" rx="2.5" ry="2.5" fill="#FFF" />
+        <!-- Nose -->
+        <ellipse cx="100" cy="97" rx="4" ry="3" fill="#8B0000" />
+        <!-- Mouth (smile) -->
+        <path d="M90 105 Q100 115 110 105" fill="none" stroke="#8B0000" stroke-width="2" stroke-linecap="round" />
+        <!-- Cheeks -->
+        <ellipse cx="72" cy="98" rx="8" ry="5" fill="#FF6B6B" opacity="0.4" />
+        <ellipse cx="128" cy="98" rx="8" ry="5" fill="#FF6B6B" opacity="0.4" />
+        <!-- Legs -->
+        <rect x="70" y="200" width="14" height="28" rx="7" fill="#FF8F00" stroke="#DAA520" stroke-width="1.5" />
+        <rect x="116" y="200" width="14" height="28" rx="7" fill="#FF8F00" stroke="#DAA520" stroke-width="1.5" />
+        <!-- Hooves -->
+        <rect x="68" y="222" width="18" height="8" rx="4" fill="#DAA520" />
+        <rect x="114" y="222" width="18" height="8" rx="4" fill="#DAA520" />
+        <!-- Tail (Fire) -->
+        <g class="mascot-tail">
+          <ellipse cx="155" cy="150" rx="22" ry="14" fill="url(#fireGrad)" opacity="0.8"
+            transform="rotate(20 155 150)" />
+          <ellipse cx="165" cy="145" rx="14" ry="10" fill="#FFD700" opacity="0.6" transform="rotate(15 165 145)" />
+        </g>
+        <!-- Collar/Ornament -->
+        <path d="M75 120 Q100 135 125 120" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round" />
+        <circle cx="100" cy="128" r="6" fill="#FFD700" />
+        <text x="100" y="131" text-anchor="middle" font-size="8" font-weight="900" fill="#8B0000">福</text>
+        <!-- Gradients -->
+        <defs>
+          <radialGradient id="bodyGrad" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#FF8F00" />
+            <stop offset="100%" stop-color="#E65100" />
+          </radialGradient>
+          <radialGradient id="headGrad" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#FFB300" />
+            <stop offset="100%" stop-color="#FF8F00" />
+          </radialGradient>
+          <radialGradient id="fireGrad" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#FFD700" />
+            <stop offset="50%" stop-color="#FF8F00" />
+            <stop offset="100%" stop-color="#FF6F00" />
+          </radialGradient>
+        </defs>
+      </svg>
+      <div class="mascot-glow"></div>
+    </div>
+  </div>
+
+  <!-- ========== MUSIC TOGGLE ========== -->
+  <button class="music-toggle" id="music-toggle" title="Bật/Tắt nhạc xuân">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
+    </svg>
+  </button>
+
+  <!-- ========== TOAST ========== -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">🧧</span>
+    <span class="toast-message" id="toast-message"></span>
+  </div>
+
+  <!-- ========== WELCOME MODAL ========== -->
+  <div class="welcome-modal-overlay" id="welcome-modal">
+    <div class="welcome-modal-content">
+      <div class="ornament tl"></div>
+      <div class="ornament tr"></div>
+      <div class="ornament bl"></div>
+      <div class="ornament br"></div>
+
+      <div class="welcome-decoration">🌸 🧧 🌸</div>
+      <h2 style="color:var(--gold-primary);font-size:2rem;margin-bottom:1rem;text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+        Lời Chúc Năm Mới</h2>
+      <div class="welcome-message">
+        <p style="margin-bottom:10px;">Chúc bạn một năm mới thật nhiều sức khỏe, niềm vui và luôn giữ được tinh thần lạc
+          quan trong mọi việc.</p>
+        <p style="margin-bottom:10px;">Tôi hy vọng bạn sẽ đạt được nhiều thành công trong học tập, từng bước tiến gần
+          hơn tới những mục tiêu mà bạn đã đặt ra.</p>
+        <p>Chúc bạn luôn may mắn, bình an và có một năm mới thật ý nghĩa!</p>
+      </div>
+
+      <div class="welcome-signature">From: Hoa Quang Thang</div>
+
+      <button class="welcome-close-btn" id="welcome-close">Cảm ơn! Nhận Lộc Ngay 🧧</button>
+    </div>
+  </div>
+
+  <!-- ========== RANDOM LIXI GAME ========== -->
+  <div class="lixi-game-overlay" id="lixi-game">
+    <h2 class="game-title">Chọn 1 Bao Lì Xì May Mắn</h2>
+    <div class="game-container" id="game-container">
+      <div class="game-envelope" onclick="playGame(0)"></div>
+      <div class="game-envelope" onclick="playGame(1)"></div>
+      <div class="game-envelope" onclick="playGame(2)"></div>
+    </div>
+  </div>
+
+  <div class="game-result-modal" id="game-result">
+    <div class="welcome-decoration">🎉</div>
+    <h3>Chúc Mừng!</h3>
+    <div class="result-amount" id="result-amount">0đ</div>
+    <div class="result-msg">Lộc may mắn từ Hòa Quang Thắng</div>
+    <button class="welcome-close-btn" onclick="closeGameResults()">Nhận Lộc</button>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="js/app.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/mascot.js"></script>
+  <script src="js/fireworks.js"></script>
+
+
+  <script>
+    /* === MAIN INIT === */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Init modules
+      App.init();
+      Countdown.init();
+      Envelope.init();
+      RecentList.init();
+      Mascot.init();
+      Fireworks.init();
+
+
+      // Ember particles
+      createEmbers();
+
+      // Update total display
+      updateTotal();
+      App.on('total-updated', () => updateTotal());
+
+      // Amount presets
+      document.querySelectorAll('.amount-preset').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.amount-preset').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById('lixi-amount').value = btn.dataset.amount;
+        });
+      });
+
+      // Envelope picker
+      document.querySelectorAll('.envelope-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+          document.querySelectorAll('.envelope-option').forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+        });
+      });
+
+      // Form submission
+      document.getElementById('lixi-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('sender-name').value.trim();
+        const amount = parseInt(document.getElementById('lixi-amount').value);
+        const design = document.querySelector('.envelope-option.selected')?.dataset.design || '1';
+        const message = document.getElementById('lixi-message').value.trim();
+
+        if (!name || !amount || amount < 10000 || !message) {
+          showToast('Vui lòng nhập đầy đủ thông tin và lời chúc!', '⚠️');
+          return;
+        }
+
+        const item = App.sendLixi(name, amount, design, message);
+        Envelope.show(amount, design, message);
+        Fireworks.fire(); // Fire small burst
+        showToast(`${name} đã gửi ${formatMoney(amount)}đ lì xì!`, '🧧');
+      });
+
+      // Music toggle
+      const musicBtn = document.getElementById('music-toggle');
+      let musicPlaying = false;
+      if (musicBtn) {
+        musicBtn.addEventListener('click', () => {
+          musicPlaying = !musicPlaying;
+          musicBtn.classList.toggle('playing', musicPlaying);
+          showToast(musicPlaying ? 'Đang phát nhạc xuân 🎵' : 'Đã tắt nhạc', musicPlaying ? '🎵' : '🔇');
+        });
+      }
+
+      // Set default amount
+      const amtInput = document.getElementById('lixi-amount');
+      if (amtInput) amtInput.value = '1000000';
+
+      // Welcome Modal Logic
+      setTimeout(() => {
+        const modal = document.getElementById('welcome-modal');
+        if (modal && !localStorage.getItem('welcome_shown_7')) {
+          modal.classList.add('active');
+          localStorage.setItem('welcome_shown_7', 'true');
+        } else if (modal) {
+          // Always show for demo request, or check if user wants it always shown? 
+          // User said "Bổ sung lời chúc mừng năm mới khi vào website", implies every time or first time?
+          // I'll show it every time for now as it's a "send link to friend" scenario.
+          // Removing localStorage check for demo purposes or using session storage?
+          // Let's just show it every time for this demo.
+          modal.classList.add('active');
+        }
+      }, 1000);
+
+      const closeWelcomeBtn = document.getElementById('welcome-close');
+      if (closeWelcomeBtn) {
+        closeWelcomeBtn.addEventListener('click', () => {
+          const modal = document.getElementById('welcome-modal');
+          if (modal) modal.classList.remove('active');
+          // Start Game
+          startLixiGame();
+        });
+      }
+    });
+
+    // --- GAME LOGIC ---
+    function startLixiGame() {
+      const overlay = document.getElementById('lixi-game');
+      const container = document.getElementById('game-container');
+      if (!overlay || !container) return;
+
+      overlay.classList.add('active');
+      // Start shuffling animation
+      document.querySelectorAll('.game-envelope').forEach(el => el.classList.add('shuffling'));
+    }
+
+    function playGame(index) {
+      if (localStorage.getItem('game_played')) {
+        // Optional: allow only once? For demo let's allow multiple times if they reset? 
+        // But logic is simple here.
+      }
+
+      const overlay = document.getElementById('lixi-game');
+      overlay.classList.remove('active');
+
+      // Random amount
+      const amounts = [50000, 100000, 200000, 500000];
+      // Weighted random? let's just do random
+      const amount = amounts[Math.floor(Math.random() * amounts.length)];
+
+      // Show Result
+      const resModal = document.getElementById('game-result');
+      const resAmount = document.getElementById('result-amount');
+
+      resAmount.textContent = formatMoney(amount) + 'đ';
+      resModal.classList.add('active');
+
+      Fireworks.fire();
+
+      // Also send a thank you lixi back? No, this is receiving.
+    }
+
+    function closeGameResults() {
+      const resModal = document.getElementById('game-result');
+      resModal.classList.remove('active');
+      showToast('Chúc bạn năm mới phát tài!', '🧧');
+    }
+
+    function updateTotal() {
+      const total = App.getTotal();
+      const milestone = App.getMilestone();
+      document.getElementById('total-amount').textContent = formatMoney(total) + 'đ';
+      const pct = Math.min((total / milestone) * 100, 100);
+      document.getElementById('total-progress-bar').style.width = pct + '%';
+    }
+
+    function formatMoney(n) {
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function showToast(msg, icon) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      const toastIcon = toast.querySelector('.toast-icon');
+      toastMsg.textContent = msg;
+      if (icon) toastIcon.textContent = icon;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function createEmbers() {
+      const container = document.getElementById('ember-container');
+      if (!container) return;
+      for (let i = 0; i < 20; i++) {
+        const ember = document.createElement('div');
+        ember.className = 'ember';
+        ember.style.left = Math.random() * 100 + '%';
+        ember.style.animationDuration = (5 + Math.random() * 10) + 's';
+        ember.style.animationDelay = (Math.random() * 8) + 's';
+        ember.style.width = (2 + Math.random() * 4) + 'px';
+        ember.style.height = ember.style.width;
+        container.appendChild(ember);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

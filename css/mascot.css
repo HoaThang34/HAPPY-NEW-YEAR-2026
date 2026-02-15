@@ -1,0 +1,249 @@
+/* ============================================
+   LINH VẬT NGỰA LỬA - SVG Animation
+   ============================================ */
+
+.mascot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: var(--z-mascot);
+    pointer-events: none;
+}
+
+.mascot-wrapper {
+    position: relative;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+/* Main mascot SVG */
+.mascot-svg {
+    width: 120px;
+    height: 140px;
+    animation: mascot-idle 2s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(255, 111, 0, 0.3));
+    transition: filter 0.3s;
+}
+
+.mascot-wrapper:hover .mascot-svg {
+    filter: drop-shadow(0 5px 25px rgba(255, 111, 0, 0.5));
+}
+
+@keyframes mascot-idle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Jump animation when lì xì is sent */
+.mascot-svg.jumping {
+    animation: mascot-jump 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes mascot-jump {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    30% {
+        transform: translateY(-30px) scale(1.05, 0.95);
+    }
+
+    50% {
+        transform: translateY(-35px) scale(0.95, 1.05);
+    }
+
+    70% {
+        transform: translateY(-10px) scale(1.02);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Wave animation for milestones */
+.mascot-svg.waving {
+    animation: mascot-wave 1s ease-in-out;
+}
+
+@keyframes mascot-wave {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(5deg);
+    }
+
+    75% {
+        transform: translateY(-5px) rotate(-3deg);
+    }
+}
+
+/* SVG part animations */
+.mascot-eye-left,
+.mascot-eye-right {
+    transition: ry 0.15s;
+}
+
+/* Blink on hover */
+.mascot-wrapper:hover .mascot-eye-left,
+.mascot-wrapper:hover .mascot-eye-right {
+    animation: blink 0.3s ease;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        ry: 5;
+    }
+
+    50% {
+        ry: 1;
+    }
+}
+
+/* Mane fire animation */
+.mascot-mane {
+    animation: mane-flicker 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes mane-flicker {
+    0% {
+        opacity: 0.9;
+        transform: scaleX(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1.05);
+    }
+
+    100% {
+        opacity: 0.9;
+        transform: scaleX(0.98);
+    }
+}
+
+/* Tail fire */
+.mascot-tail {
+    animation: tail-sway 2s ease-in-out infinite;
+    transform-origin: left center;
+}
+
+@keyframes tail-sway {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scaleX(1);
+    }
+
+    50% {
+        transform: rotate(5deg) scaleX(1.05);
+    }
+}
+
+/* Speech bubble */
+.mascot-speech {
+    position: absolute;
+    bottom: 100%;
+    right: 10px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--sp-sm) var(--sp-md);
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+    max-width: 220px;
+    white-space: normal;
+    text-align: center;
+    box-shadow: var(--shadow-gold);
+}
+
+.mascot-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 30px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(255, 215, 0, 0.3);
+}
+
+.mascot-speech.show {
+    opacity: 1;
+    transform: translateY(-8px) scale(1);
+}
+
+/* Glow effect behind mascot */
+.mascot-glow {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(255, 111, 0, 0.3) 0%, transparent 70%);
+    border-radius: var(--radius-full);
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    from {
+        opacity: 0.5;
+        transform: translateX(-50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .mascot-svg {
+        width: 90px;
+        height: 105px;
+    }
+
+    .mascot-container {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .mascot-speech {
+        font-size: 0.7rem;
+        max-width: 160px;
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .mascot-svg {
+        width: 70px;
+        height: 85px;
+    }
+}

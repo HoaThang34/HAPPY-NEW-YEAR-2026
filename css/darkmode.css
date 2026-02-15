@@ -1,0 +1,35 @@
+/* === DARK MODE "Đêm Giao Thừa" === */
+body.dark-mode {
+    --bg-primary: #0a0505;
+    --bg-secondary: #150a0a;
+    --bg-card: rgba(20, 8, 8, 0.9);
+}
+
+body.dark-mode::before {
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(196, 30, 58, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 111, 0, 0.03) 0%, transparent 50%);
+}
+
+body.dark-mode .countdown-value {
+    background: rgba(15, 6, 6, 0.9);
+    border-color: rgba(255, 215, 0, 0.1);
+}
+
+body.dark-mode .lixi-form-card {
+    background: rgba(15, 6, 6, 0.9);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: rgba(10, 4, 4, 0.9);
+}
+
+body.dark-mode .leaderboard-card {
+    background: rgba(15, 6, 6, 0.9);
+}
+
+body.dark-mode .lb-item:hover {
+    background: rgba(255, 215, 0, 0.03);
+}

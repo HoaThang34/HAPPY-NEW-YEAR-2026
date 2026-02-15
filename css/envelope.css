@@ -1,0 +1,416 @@
+/* ============================================
+   BAO LÌ XÌ 3D - CSS 3D Transforms
+   ============================================ */
+
+/* --- 3D Envelope Display Area --- */
+.envelope-3d-display {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.envelope-3d-display.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.envelope-3d-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+/* --- 3D Envelope --- */
+.envelope-3d {
+    width: 220px;
+    height: 340px;
+    perspective: 1000px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.envelope-body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: envelope-entrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes envelope-entrance {
+    from {
+        transform: scale(0.3) rotateY(180deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotateY(0);
+        opacity: 1;
+    }
+}
+
+/* Envelope front face */
+.envelope-front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+/* Design 1: Ngựa Lửa Vàng Kim */
+.envelope-design-1 .envelope-front {
+    background: linear-gradient(180deg, #C41E3A 0%, #8B0000 60%, #6B0000 100%);
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    box-shadow:
+        0 10px 40px rgba(196, 30, 58, 0.4),
+        inset 0 -15px 30px rgba(0, 0, 0, 0.2),
+        inset 0 2px 0 rgba(255, 215, 0, 0.2);
+}
+
+/* Design 2: Hoa Mai Đỏ */
+.envelope-design-2 .envelope-front {
+    background: linear-gradient(180deg, #D32F2F 0%, #B71C1C 60%, #880E0E 100%);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    box-shadow:
+        0 10px 40px rgba(211, 47, 47, 0.4),
+        inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Design 3: Phúc Lộc Thọ */
+.envelope-design-3 .envelope-front {
+    background: linear-gradient(180deg, #BF360C 0%, #8B0000 60%, #5D0000 100%);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    box-shadow:
+        0 10px 40px rgba(191, 54, 12, 0.4),
+        inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Design 4: Minimal Hiện Đại */
+.envelope-design-4 .envelope-front {
+    background: linear-gradient(180deg, #2D0F0F 0%, #1A0A0A 60%, #0D0505 100%);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow:
+        0 10px 40px rgba(45, 15, 15, 0.6),
+        inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Envelope decorations */
+.envelope-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.env-gold-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-deep));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.env-gold-circle svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--red-deep);
+}
+
+.env-gold-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold-primary);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    font-family: 'Be Vietnam Pro', serif;
+}
+
+.env-pattern-dots {
+    position: absolute;
+    top: var(--sp-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.env-pattern-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 215, 0, 0.3);
+}
+
+.env-border-pattern {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: calc(var(--radius-lg) - 4px);
+    pointer-events: none;
+}
+
+/* Envelope flap */
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+}
+
+.envelope-flap-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.envelope-design-1 .envelope-flap-face {
+    background: linear-gradient(180deg, #A01530, #8B0000);
+    border-top: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+.envelope-design-2 .envelope-flap-face {
+    background: linear-gradient(180deg, #C62828, #B71C1C);
+}
+
+.envelope-design-3 .envelope-flap-face {
+    background: linear-gradient(180deg, #A63508, #8B0000);
+}
+
+.envelope-design-4 .envelope-flap-face {
+    background: linear-gradient(180deg, #3D1F1F, #2D0F0F);
+}
+
+.envelope-flap-seal {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-full);
+    background: var(--gold-primary);
+    z-index: 6;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--red-deep);
+    font-weight: 900;
+}
+
+/* Open animation */
+.envelope-3d.opening .envelope-flap {
+    transform: rotateX(-180deg);
+}
+
+/* Money reveal */
+.envelope-money {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+    text-align: center;
+    z-index: 4;
+    width: 90%;
+}
+
+.envelope-3d.opening .envelope-money {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+.money-amount {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold-primary);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    white-space: nowrap;
+    margin-bottom: var(--sp-sm);
+}
+
+.envelope-message {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    margin-top: var(--sp-sm);
+    line-height: 1.4;
+    font-style: italic;
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.money-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-full);
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+    animation: money-pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes money-pulse {
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 1;
+    }
+}
+
+/* Click-to-close button */
+.envelope-close {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--sp-sm) var(--sp-xl);
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--gold-primary);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.5s;
+    z-index: 10;
+}
+
+.envelope-3d.opening .envelope-close {
+    opacity: 1;
+}
+
+.envelope-close:hover {
+    background: rgba(255, 215, 0, 0.2);
+}
+
+/* Sparkle particles around opened envelope */
+.envelope-sparkles {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--gold-primary);
+    border-radius: var(--radius-full);
+    opacity: 0;
+}
+
+.envelope-3d.opening .sparkle {
+    animation: sparkle-burst 1s ease-out forwards;
+}
+
+@keyframes sparkle-burst {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--sx, 50px), var(--sy, -50px)) scale(0);
+    }
+}
+
+/* --- Mini envelope in form --- */
+.mini-envelope {
+    width: 50px;
+    height: 70px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.mini-env-body {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-env-body.design-1 {
+    background: linear-gradient(180deg, #C41E3A, #8B0000);
+}
+
+.mini-env-body.design-2 {
+    background: linear-gradient(180deg, #D32F2F, #B71C1C);
+}
+
+.mini-env-body.design-3 {
+    background: linear-gradient(180deg, #BF360C, #8B0000);
+}
+
+.mini-env-body.design-4 {
+    background: linear-gradient(180deg, #2D0F0F, #1A0A0A);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.mini-env-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 22px;
+    border-radius: var(--radius-full);
+    background: var(--gold-primary);
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .envelope-3d {
+        width: 180px;
+        height: 280px;
+    }
+}
